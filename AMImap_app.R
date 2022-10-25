@@ -14,7 +14,7 @@ library(RPostgres)
 
 con <- dbConnect(Postgres(), dbname = "postgres",
                  host = "67.81.37.92", port = 5432,
-                 user = "postgres", password = "cma365163")
+                 user = "guest_user", password = "PASSWORD UPON REQUEST")
 
 
 AH_nta_year <- dbReadTable(con, name = Id(schema = "AMI", table = "AH_nta_year"))
