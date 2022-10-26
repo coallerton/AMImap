@@ -1,4 +1,4 @@
-# AMImap
+# How "Affordable" is that Housing?
 
 This project analyzes true local affordability of "affordable housing" in New York City. By pulling affordable housing development data and neigborhood median income data, affordable housing rents are compared to what local income earners can pay for rent.
 
