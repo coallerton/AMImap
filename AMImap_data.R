@@ -78,7 +78,7 @@ AH_avg <- AH_nta_year %>%
 
 con <- dbConnect(Postgres(), dbname = "postgres",
                  host = "67.81.37.92", port = 5432,
-                 user = "guest_user", password = "") #PASSWORD GRANTED UPON REQUEST
+                 user = "", password = "") #LOGIN GRANTED UPON REQUEST
 
 dbWriteTable(con, name = Id(schema = "AMI", table = "AH_nta_year"), 
              value = AH_nta_year, overwrite = TRUE)
