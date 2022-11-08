@@ -12,14 +12,14 @@ library(DBI)
 library(RPostgreSQL)
 library(RPostgres)
 
-con <- dbConnect(Postgres(), dbname = "housenyc",
-                 host = "67.81.37.92", port = 5432,
-                 user = "", password = "") #LOGIN GRANTED UPON REQUEST
+con <- dbConnect(Postgres(), dbname = "",
+                 host = "", port = 5432,
+                 user = "", password = "") #CREDENTIALS GRANTED UPON REQUEST
 
 
-AH_nta_year <- dbReadTable(con, name = Id(schema = "AMI", table = "AH_nta_year"))
-AH_avg <- dbReadTable(con, name = Id(schema = "AMI", table = "AH_avg"))
-nta_AH <- st_read(con, layer = Id(schema = "AMI", table = "nta_AH"))
+AH_nta_year <- dbReadTable(con, name = Id(schema = "amimap", table = "AH_nta_year"))
+AH_avg <- dbReadTable(con, name = Id(schema = "amimap", table = "AH_avg"))
+nta_AH <- st_read(con, layer = Id(schema = "amimap", table = "nta_AH"))
 
 dbDisconnect(con)
 
