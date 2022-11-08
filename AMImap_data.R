@@ -19,9 +19,9 @@ ntas <- ntas %>%
 
 affordableprojectsdata <- read.socrata(
   "https://data.cityofnewyork.us/resource/hg8x-zxpr.json",
-  app_token = "", # PERSONAL CREDENTIALS SHOULD BE CREATED
+  app_token = "", 
   email     = "",
-  password  = ""
+  password  = "" #PERSONAL CREDENTIALS SHOULD BE CREATED
 )
 download.file("https://www1.nyc.gov/assets/planning/download/office/planning-level/nyc-population/acs/econ_20162020_acs5yr_nta.xlsx", "ACS_data.xlsx", mode = "wb")
 ACS_data <- read_excel("ACS_data.xlsx")
@@ -76,15 +76,15 @@ AH_avg <- AH_nta_year %>%
   summarise(mean = round(mean(sum), 0))
 
 
-con <- dbConnect(Postgres(), dbname = "postgres",
-                 host = "67.81.37.92", port = 5432,
-                 user = "", password = "") #LOGIN GRANTED UPON REQUEST
+con <- dbConnect(Postgres(), dbname = "",
+                 host = "", port = 5432,
+                 user = "", password = "") #CREDENTIALS GRANTED UPON REQUEST
 
-dbWriteTable(con, name = Id(schema = "AMI", table = "AH_nta_year"), 
+dbWriteTable(con, name = Id(schema = "amimap", table = "AH_nta_year"), 
              value = AH_nta_year, overwrite = TRUE)
-dbWriteTable(con, name = Id(schema = "AMI", table = "AH_avg"),
+dbWriteTable(con, name = Id(schema = "amimap", table = "AH_avg"),
              value = AH_avg, overwrite = TRUE)
-dbWriteTable(con, name = Id(schema = "AMI", table = "nta_AH"),
+dbWriteTable(con, name = Id(schema = "amimap", table = "nta_AH"),
              value = nta_AH, overwrite = TRUE)
 
 dbDisconnect(con)
