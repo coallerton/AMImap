@@ -19,9 +19,9 @@ ntas <- ntas %>%
 
 affordableprojectsdata <- read.socrata(
   "https://data.cityofnewyork.us/resource/hg8x-zxpr.json",
-  app_token = "S16sBzqeXtOEHIDbwJrvmPBgq",
-  email     = "coallerton@gmail.com",
-  password  = "pLZ8ZurAbpxXE9K"
+  app_token = "", # PERSONAL CREDENTIALS SHOULD BE CREATED
+  email     = "",
+  password  = ""
 )
 download.file("https://www1.nyc.gov/assets/planning/download/office/planning-level/nyc-population/acs/econ_20162020_acs5yr_nta.xlsx", "ACS_data.xlsx", mode = "wb")
 ACS_data <- read_excel("ACS_data.xlsx")
