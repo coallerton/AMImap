@@ -12,9 +12,9 @@ library(DBI)
 library(RPostgreSQL)
 library(RPostgres)
 
-con <- dbConnect(Postgres(), dbname = "postgres",
+con <- dbConnect(Postgres(), dbname = "housenyc",
                  host = "67.81.37.92", port = 5432,
-                 user = "guest_user", password = "") #PASSWORD GRANTED UPON REQUEST
+                 user = "", password = "") #LOGIN GRANTED UPON REQUEST
 
 
 AH_nta_year <- dbReadTable(con, name = Id(schema = "AMI", table = "AH_nta_year"))
